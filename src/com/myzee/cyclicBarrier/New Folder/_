@@ -1,0 +1,21 @@
+
+class taskThread implements Runnable {
+	CyclicBarrier barrier;
+	public taskThread(CyclicBarrier barrier) {
+		this.barrier = barrier;
+	}
+	public void run() {
+		barrier.await();
+	}
+}
+
+public class CycliBarrierTest2 {
+	static CyclicBarrier barrier = new CyclicBarrier(3, new Runnable(){
+		System.out.println("all threads have been started, lets move");
+	});
+	public static void main() {
+		Thread t1 = new Thread(new TaskThread(barrier))
+		Thread t2= new Thread(new TaskThread(barrier))
+		Thread t3 = new Thread(new TaskThread(barrier))
+	}
+}

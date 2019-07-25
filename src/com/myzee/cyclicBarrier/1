@@ -1,0 +1,26 @@
+
+class Task implements Runnable {
+	public Task(CyclicBarrier bar) {
+		this.barrier = barrier;	
+	}
+	public void run() {
+		System.out.println(Thread.currentThread.getName() + " has arrived");
+		
+	}
+}
+
+
+public class 1_CycliBarrierTest {
+	public static CyclicBarrier barrier = new CyclicBarrier(3, new Runnable() {
+		System.out.println("All parties have been arrived, lets play");
+	});
+	public static void main (String arg[]) {
+		Thread t1 = new Thread(new Task(barrier));
+		Thread t2 = new Thread(new Task(barrier));
+		Thread t3 = new Thread(new Task(barrier));
+		
+		t1.start();
+		t2.start();
+		t3.start();
+	}
+}
