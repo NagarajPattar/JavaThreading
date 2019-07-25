@@ -54,19 +54,6 @@ class FactorialService implements Callable<Long>{
 			num--;
 			Thread.sleep(1000);
 		}
-		
-		HashSet<Integer> h = new HashSet<>();
-		h.add(null);
-		h.add(null);
-		h.add(null);
-		h.add(5);
-		h.add(3);
-		Iterator<Integer> it = h.iterator();
-		while (it.hasNext()) {
-			Integer i = (Integer) it.next();
-			System.out.println(i);
-		}
-		
 		return result;
 	}
 	
